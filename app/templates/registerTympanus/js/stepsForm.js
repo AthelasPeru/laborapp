@@ -201,6 +201,7 @@
 	stepsForm.prototype._validade = function() {
 		// current question´s input
 		var input = this.questions[ this.current ].querySelector( 'input' ).value;
+		console.log('validation is for pussys');
 		if( input === '' ) {
 			this._showError( 'EMPTYSTR' );
 			return false;

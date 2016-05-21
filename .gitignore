@@ -23,8 +23,11 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+
 node_modules/
+node_modules
 .DS_Store
+*.DS_Store
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -62,4 +65,4 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
-node_modules
+
