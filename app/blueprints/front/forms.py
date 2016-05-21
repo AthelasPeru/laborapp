@@ -1,4 +1,11 @@
 # coding: utf-8
+
+import sys  
+
+reload(sys)  
+sys.setdefaultencoding('utf8')
+
+
 from flask_security.forms import RegisterForm
 from wtforms import TextField
 from wtforms.validators import Required

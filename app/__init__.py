@@ -67,9 +67,9 @@ def create_app(app=None, config_file=None):
                     role_id=role_id
                 )
                 
-            return dict(role=role)
-        else:
-            abort(500)
+        return dict(role=role)
+        # else:
+        #     abort(500)
 
 
 
