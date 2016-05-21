@@ -8,34 +8,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <title>Laborapp | Registro de Usuario</title>
-    <meta name="description" content="Minimal Form Interface: Simplistic, single input view form" />
+    <meta name="description" content="Minimal Form Interface: Simplistic, single input view form (From CodeDrops)" />
     <meta name="keywords" content="form, minimal, interface, single input, big form, responsive form, transition" />
-    <meta name="author" content="Codrops" />
-    <link rel="shortcut icon" href="{{url_for("static", filename="favicon.ico")}}>
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="css/component.css" />
-    <script src="js/modernizr.custom.js"></script>
+    <link rel="shortcut icon" href="{{url_for("static", filename="/favicon.ico")}}>
+    <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="tympanus/css/normalize.css")}}/>
+    <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="tympanus/css/demo.css")}} />
+    <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="tympanus/css/component.css")}} />
+    <script src="{{url_for("static", filename="tympanus/js/modernizr.custom.js")}}></script>
   </head>
   <body>
-<div class="container">
-      <!-- Top Navigation -->
-      <header class="codrops-header">
-        <h1>¡Hola! ¿Buscando un nuevo trabajo?<span>Puede que tengamos algo para tí...</span></h1>  
-      </header>
-      <section>
-{% if role == "candidate" %}
-  {% include "registerTympanus/register_user.html" %}
 
-{% else %}
-  {% include "registerTympanus/register_company.html" %}
+    <div class="container">
 
-{% endif %}
+        {% if role == "candidate" %}
 
-</section>
+          {% include "registerTympanus/register_user.html" %}
+            
+        {% else %}
+
+          {% include "registerTympanus/register_company.html" %}
+
+        {% endif %}
+      
     </div><!-- /container -->
-    <script src="js/classie.js"></script>
-    <script src="js/stepsForm.js"></script>
+
+    <script src="{{url_for("static", filename="tympanus/js/classie.js")}}></script>
+    <script src="{{url_for("static", filename="tympanus/js/stepsForm.js")}}></script>
     <script>
       var theForm = document.getElementById( 'theForm' );
 
