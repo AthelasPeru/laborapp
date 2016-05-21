@@ -1,0 +1,107 @@
+.login-form-holder{
+	margin-top: 50px;
+	width: 90%;
+	text-align: center;
+	
+	input {
+		display: block;
+	    padding: 10px 15px;
+	    margin: 4px auto;
+	    text-transform: uppercase;
+	    background-color: #DF6842;
+	    -webkit-transition: all .4s;
+	    transition: all .4s;
+	    color: #000;
+	    height: 50px;
+	    width: 100%;
+	    min-width: 250px;
+	}
+	input[type=text],
+	input[type=password]{
+		background-color: white!important;
+		margin-bottom:25px;
+	}
+	::-webkit-input-placeholder {
+	   color: #DF6842;
+	   font-weight: 700;
+	   text-transform: uppercase;
+	   font-size: 20px;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: #DF6842;
+	   font-weight: 700;
+	   text-transform: uppercase;
+	   font-size: 20px;  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: #DF6842;
+	   font-weight: 700;
+	   text-transform: uppercase;
+	   font-size: 20px;  
+	}
+
+	:-ms-input-placeholder {  
+	   color: #DF6842;
+	   font-weight: 700;
+	   text-transform: uppercase;
+	   font-size: 20px;  
+	}
+}
+.name-wrapper,
+.password-wrapper {
+	position: relative;
+}
+
+.login-name {
+	
+}
+.login-name + label {
+	position: absolute;
+	display: none;
+}
+.login-password {
+	
+}
+.login-password + label {
+	position: absolute;
+	display: none;
+}
+:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: rgb(250, 250, 250);
+    background-image: none;
+    color: rgb(0, 0, 0);
+}
+
+::-webkit-input-placeholder {
+   color: #DF6842;
+   text-align:center;
+   font-weight: 700;
+   text-transform: uppercase;
+   font-size: 20px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #DF6842;
+   text-align:center;
+   font-weight: 700;
+   text-transform: uppercase;
+   font-size: 20px;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #DF6842;
+   text-align:center;
+   font-weight: 700;
+   text-transform: uppercase;
+   font-size: 20px;  
+}
+
+:-ms-input-placeholder {  
+   color: #DF6842;
+   text-align:center;
+   font-weight: 700;
+   text-transform: uppercase;
+   font-size: 20px;  
+}

@@ -2196,7 +2196,7 @@ body {
 	.dashboard__aside {
 		width: 300px;
 		background-color: #F5724A;
-		padding: 50px;
+		padding: 20px;
 		border-left: 4px solid rgba(0, 0, 0, 0.2); }
 		@media (min-width: 480px) and (max-width: 1024px) {
 			.dashboard__aside {
@@ -2207,16 +2207,19 @@ body {
 
 .companies-list {
 	margin: 0;
-	padding: 0; }
+	padding: 0;
+	width: 100%; }
 	.companies-list__item {
 		margin-bottom: 15px;
 		background-color: #DF6842; }
 		@media (min-width: 480px) and (max-width: 1024px) {
 			.companies-list__item {
-				display: inline-block; } }
+				max-width: 60%;
+				margin: 0 auto; } }
 		@media (max-width: 479px) {
 			.companies-list__item {
-				display: inline-block; } }
+				max-width: 80%;
+				margin: 0 auto; } }
 
 .profile {
 	padding: 30px;
@@ -2266,6 +2269,11 @@ body {
 		margin: 0 0 15px;
 		text-transform: uppercase; }
 
+label {
+	font-size: 15px;
+	line-height: 15px;
+	vertical-align: super; }
+
 input[type=checkbox] {
 	padding-left: 5px;
 	padding-right: 5px;
@@ -2277,6 +2285,9 @@ input[type=checkbox] {
 	overflow: hidden;
 	width: 15px;
 	height: 15px; }
+
+input[type=checkbox]:focus {
+	outline: none; }
 
 input[type=checkbox]:checked {
 	background-color: #F5724A; }
@@ -2316,6 +2327,96 @@ input[type=checkbox]:hover {
 	@media (max-width: 479px) {
 		.tooltip {
 			display: none; } }
+
+.login-form-holder {
+	margin-top: 50px;
+	width: 90%;
+	text-align: center; }
+	.login-form-holder input {
+		display: block;
+		padding: 10px 15px;
+		margin: 4px auto;
+		text-transform: uppercase;
+		background-color: #DF6842;
+		-webkit-transition: all .4s;
+		transition: all .4s;
+		color: #000;
+		height: 50px;
+		width: 100%;
+		min-width: 250px; }
+	.login-form-holder input[type=text],
+	.login-form-holder input[type=password] {
+		background-color: white !important;
+		margin-bottom: 25px; }
+	.login-form-holder ::-webkit-input-placeholder {
+		color: #DF6842;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 20px; }
+	.login-form-holder :-moz-placeholder {
+		/* Firefox 18- */
+		color: #DF6842;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 20px; }
+	.login-form-holder ::-moz-placeholder {
+		/* Firefox 19+ */
+		color: #DF6842;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 20px; }
+	.login-form-holder :-ms-input-placeholder {
+		color: #DF6842;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 20px; }
+
+.name-wrapper,
+.password-wrapper {
+	position: relative; }
+
+.login-name + label {
+	position: absolute;
+	display: none; }
+
+.login-password + label {
+	position: absolute;
+	display: none; }
+
+:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	background-color: #fafafa;
+	background-image: none;
+	color: black; }
+
+::-webkit-input-placeholder {
+	color: #DF6842;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px; }
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: #DF6842;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px; }
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: #DF6842;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px; }
+
+:-ms-input-placeholder {
+	color: #DF6842;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px; }
 
 .hide {
 	display: none !important; }

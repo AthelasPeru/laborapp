@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="panels-container">
+		<div class="init-panel__company">
+		  <a href="#" class="user-avatar" id="userCompany">
+		  	<img src="{{url_for("static", filename="dist/img/developer.png")}}" alt="">
+		  </a>
+		  <h2 class="title--alpha">Empresa</h2>
+		  <div id="compLogin">
+
+			  	<form class="login-form-holder">
+			  		<div class="name-wrapper">
+			  			<input class="login-name" placeholder="Nombre" type="text" name="name">
+			  			<label for="name">Nombre</label>
+			  		</div>
+			  		<div class="password-wrapper">
+			  			<input class="login-password" placeholder="Contraseña" type="password" name="password">
+			  			<label for="password">Contraseña</label>
+			  		</div>
+					
+				  	<input type="submit" value="actualizar"  class="cta cta--alpha">
+			  	</form>
+		  </div>
+		</div>
+		<div class="init-panel__developer">
+			<a href="#" class="user-avatar" id="userDeveloper">
+				<img src="{{url_for("static", filename="dist/img/empresa.png")}}" alt="">
+			</a>
+			<h2 class="title--alpha">Developer</h2>
+			<div id="devLogin">
+
+			  	<form class="login-form-holder">
+			  		<div class="name-wrapper">
+			  			<input class="login-name" placeholder="Nombre" type="text" name="name">
+			  			<label for="name">Nombre</label>
+			  		</div>
+			  		<div class="password-wrapper">
+			  			<input class="login-password" placeholder="Contraseña" type="password" name="password">
+			  			<label for="password">Contraseña</label>
+			  		</div>
+					
+				  	<input type="submit" value="actualizar"  class="cta cta--alpha">
+			  	</form>
+		  </div>
+		</div>
+	</div>
+
+	
+{% endblock content %}

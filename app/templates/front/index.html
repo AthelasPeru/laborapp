@@ -10,7 +10,7 @@
 		  <div id="compForm" class="hide">
 			  <p class="title--beta strong">"Welcome back, friend..."</p>
 			  <div class="cta-holder">
-			  	<a href="{{url_for("security.login")}}" class="cta cta--alpha">Login</a>
+			  	<a href="{{url_for("security.login")}}?rol=comp" class="cta cta--alpha">Login</a>
 			  	<a href="{{url_for("security.register", role="company")}}" class="cta cta--alpha">Regístrate</a>
 			  </div>
 		  </div>
@@ -23,7 +23,7 @@
 			<div class="hide" id="devForm">
 				<p class="title--beta strong">"Welcome back, friend..."</p>
 			  	<div class="cta-holder">
-			  		<a href="{{url_for("security.login")}}" class="cta cta--alpha">Login</a>
+			  		<a href="{{url_for("security.login")}}?rol=dev" class="cta cta--alpha">Login</a>
 			  		<a href="{{url_for("security.register", role="candidate")}}" class="cta cta--alpha">Regístrate</a>
 			  	</div>
 		  </div>

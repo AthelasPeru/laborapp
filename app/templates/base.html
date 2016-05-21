@@ -21,7 +21,9 @@
 	<script>
 		var developerForm = $('#devForm');
 		var companyForm = $('#compForm');
-		
+		var devLogin = $('#devLogin');
+		var compLogin = $('#compLogin');
+
 		$('#userDeveloper').on('click', function(e) {
 			e.preventDefault();
 			developerForm.toggleClass('hide');
@@ -38,6 +40,19 @@
 			}
 			console.log('clicked on company');
 		});
+
+
+
+		var url = window.location.href;
+	    var rol = /rol=([^&]+)/.exec(url)[1]; // Value is in [1] ('384' in our case)
+	    
+	    if(rol=='dev'){
+	    	devLogin.removeClass('hide');
+	    }else if (rol == 'comp') {
+	    	compLogin.removeClass('hide');
+	    }else {
+	    	alert("You shall not enter directly to the login page.");
+	    }
 	</script>
 </body>
 </html>

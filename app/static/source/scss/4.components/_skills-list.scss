@@ -12,7 +12,11 @@
 		text-transform: uppercase;
 	}
 }
-
+label{
+	font-size: 15px;
+	line-height: 15px;
+	vertical-align: super;
+}
 input[type=checkbox] {
     padding-left:5px;
     padding-right:5px;
@@ -27,6 +31,9 @@ input[type=checkbox] {
 
     width:15px;
     height:15px;
+}
+input[type=checkbox]:focus{
+    outline: none;
 }
 
 input[type=checkbox]:checked {
