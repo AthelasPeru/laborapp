@@ -6,5 +6,17 @@
 </head>
 <body>
 	<h1>User dashboard for role: {{user.roles}}</h1>
+		<div id="hiddenSkills" class="skills" style="display:none" data-skills="{{user.skills}}"></div>
+		<form action="{{url_for("dashboard.main")}}" method="POST">
+		<ul class="row checkboxes-list">
+		{% for skill in skills_form.skills %}
+			<li class="small-6 medium-3 columns">{{skill}}{{skill.label}}</li>
+		{% endfor %}
+		</ul>
+		{{skills_form.hidden_tag()}} 
+		<hr>
+
+		<input type="submit" value="Modificar" class="button">
+	    </form>
 </body>
 </html>
