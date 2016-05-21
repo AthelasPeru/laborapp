@@ -1,0 +1,28 @@
+.tooltip{
+	background-color: #000;
+	color: #fff;
+	display: inline-block;
+	padding: 10px;
+	left: calc(100% + 50px);
+	top: 0;
+	width: 178px;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.2;
+	position: absolute;
+	&:before{
+		content: "";
+		position: absolute;
+		right: 100%;
+		width: 50px;
+		height: 15px;
+		left: -20px;
+		top: 0;
+		background-color: #000;
+		transform: skewX(68deg);
+		z-index: -1;
+	}
+	@include mobil{
+		display: none;
+	}
+}

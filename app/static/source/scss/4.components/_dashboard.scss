@@ -24,27 +24,7 @@
 	}	
 }
 
-.tooltip{
-	background-color: #000;
-	color: #fff;
-	display: inline-block;
-	padding: 10px;
-	max-width: 178px;
-	line-height: 1.2;
-	position: relative;
-	&:before{
-		content: "";
-		position: absolute;
-		right: 100%;
-		width: 50px;
-		height: 15px;
-		left: -20px;
-		top: 0;
-		background-color: #000;
-		transform: skewX(68deg);
-		z-index: -1;
-	}
-}
+
 
 .companies-list{
 	margin: 0;
