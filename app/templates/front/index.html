@@ -1,9 +1,54 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Front index</h1>
-    <ul>
-    	<li><a href="{{url_for("security.register", role="candidate")}}">Candidato</a></li>
-    	<li><a href="{{url_for("security.register", role="company")}}">Empresa</a></li>
-    </ul>
+    <div class="panels-container">
+		<div class="init-panel__company">
+		  <a href="#" class="user-avatar" id="userDeveloper">
+		  	<img src="{{url_for("static", filename="/dist/img/developer.png")}}" alt="">
+		  </a>
+		  <h2 class="title--alpha">Empresa</h2>
+		  <div id="compForm" class="hide">
+			  <p class="title--beta strong">"Welcome back, friend..."</p>
+			  <div class="cta-holder">
+			  	<a href="{{url_for("security.login")}}" class="cta cta--alpha">Login</a>
+			  	<a href="{{url_for("security.register", role="company")}}" class="cta cta--alpha">Regístrate</a>
+			  </div>
+		  </div>
+		</div>
+		<div class="init-panel__developer">
+			<a href="#" class="user-avatar" id="userCompany">
+				<img src="{{url_for("static", filename="/dist/img/empresa.png")}}" alt="">
+			</a>
+			<h2 class="title--alpha">Developer</h2>
+			<div class="hide" id="compForm">
+				<p class="title--beta strong">"Welcome back, friend..."</p>
+			  	<div class="cta-holder">
+			  		<a href="{{url_for("security.login")}}" class="cta cta--alpha">Login</a>
+			  		<a href="{{url_for("security.register", role="candidate")}}" class="cta cta--alpha">Regístrate</a>
+			  	</div>
+		  </div>
+		</div>
+	</div>
+
+	<script>
+		var developerForm = $('#devForm');
+		var companyForm = $('#compForm');
+		
+		$('#userDeveloper').on('click', function(e) {
+			e.preventDefault();
+			developerForm.toggleClass('hide');
+			if(!companyForm.hasClass('hide')){
+				companyForm.toggleClass('hide');
+			}
+			console.log('clicked on user');
+		});
+		$('#userCompany').on('click', function(e){
+			e.preventDefault();
+			companyForm.toggleClass('hide');
+			if(!developerForm.hasClass('hide')){
+				developerForm.toggleClass('hide');
+			}
+			console.log('clicked on company');
+		});
+	</script>
 {% endblock content %}
