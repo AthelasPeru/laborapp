@@ -18,5 +18,26 @@
 	<script src="{{url_for("static", filename="dist/js/lib/jquery/jquery.min.js")}}"></script>
 	<script src="{{url_for("static", filename="dist/js/lib/slick/slick.js")}} "></script>
 	<script src="{{url_for("static", filename="dist/js/app.min.js")}}"></script>
+	<script>
+		var developerForm = $('#devForm');
+		var companyForm = $('#compForm');
+		
+		$('#userDeveloper').on('click', function(e) {
+			e.preventDefault();
+			developerForm.toggleClass('hide');
+			if(!companyForm.hasClass('hide')){
+				companyForm.toggleClass('hide');
+			}
+			console.log('clicked on user');
+		});
+		$('#userCompany').on('click', function(e){
+			e.preventDefault();
+			companyForm.toggleClass('hide');
+			if(!developerForm.hasClass('hide')){
+				developerForm.toggleClass('hide');
+			}
+			console.log('clicked on company');
+		});
+	</script>
 </body>
 </html>
