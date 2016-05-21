@@ -1,0 +1,58 @@
+{% extends "foundation/base.html" %}
+{% import "foundation/components.html" as components%}
+{% block styles %}
+	{{super()}}
+
+	<link rel="stylesheet" href="{{url_for("static",filename="css/style.css")}}">
+{% endblock styles %}
+
+{% block navbar %}
+	{% call components.topbar(class="fixed") %}
+		<ul class="title-area">
+		    <li class="name">
+		      <h1><a href="{{url_for("front.index")}}"><span>&lt;</span>laborapp<span>&gt;</span></a></h1>
+		    </li>
+		     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	  	</ul>
+	  	 <section class="top-bar-section">
+			<ul class="right">
+				<li>
+					<a href="{{url_for("admin.index")}}">Administrador</a>
+				</li>
+			</ul>
+
+	  	 </section>
+
+	{% endcall %}    
+{% endblock navbar %}
+
+
+{% block content %}
+<div class="row">
+  
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <h5>Mensajes</h5>
+          <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="alert-box {{ category }}">{{ message }}</li>
+          {% endfor %}
+          </ul>
+          <hr>
+        {% endif %}
+      {% endwith %}
+      
+
+</div>
+	
+    
+{% endblock content %}
+
+{% block footer %}
+
+		<footer class="footer">
+			<span><a href="https:/athelas.pe">Athelas</a> &copy; 2016</span>
+		</footer>
+
+{% endblock footer %}

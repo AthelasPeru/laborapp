@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row spacer-lg">
+	<section class="small-12 medium-6 columns">
+		<h3 class="title--alpha">Alumnas</h3>
+		<ul class="row zebralist">
+			{% for student in students %}
+			<li class="small-12 columns">
+				<a href="{{url_for("front.students", student_id=student.id)}}" class="zebralist__link" data-title="{{student.name}}"><span>{{student.name}}</span></a>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+	<section class="small-12 medium-6 columns">
+		<h3 class="title--alpha">Compañias</h3>
+		<ul class="row zebralist">
+			{% for company in companies %}
+			<li class="small-12 columns">
+				<a href="{{url_for("front.companies", company_id=company.id)}}" class="zebralist__link" data-title="{{company.name}}"><span>{{company.name}}</span></a>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+</div>
+{% endblock content %}
