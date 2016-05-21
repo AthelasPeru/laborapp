@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Front index</h1>
+    <ul>
+    	<li><a href="{{url_for("security.register", role="candidate")}}">Candidato</a></li>
+    	<li><a href="{{url_for("security.register", role="company")}}">Empresa</a></li>
+    </ul>
+{% endblock content %}

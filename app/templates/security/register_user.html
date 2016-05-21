@@ -1,0 +1,61 @@
+
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+{% include "security/_messages.html" %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Laborapp | Registro de Usuario</title>
+    <meta name="description" content="Minimal Form Interface: Simplistic, single input view form" />
+    <meta name="keywords" content="form, minimal, interface, single input, big form, responsive form, transition" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="{{url_for("static", filename="favicon.ico")}}>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
+  </head>
+  <body>
+<div class="container">
+      <!-- Top Navigation -->
+      <header class="codrops-header">
+        <h1>¡Hola! ¿Buscando un nuevo trabajo?<span>Puede que tengamos algo para tí...</span></h1>  
+      </header>
+      <section>
+{% if role == "candidate" %}
+  {% include "registerTympanus/register_user.html" %}
+
+{% else %}
+  {% include "registerTympanus/register_company.html" %}
+
+{% endif %}
+
+</section>
+    </div><!-- /container -->
+    <script src="js/classie.js"></script>
+    <script src="js/stepsForm.js"></script>
+    <script>
+      var theForm = document.getElementById( 'theForm' );
+
+      new stepsForm( theForm, {
+        onSubmit : function( form ) {
+          // hide form
+          classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+          /*
+          form.submit()
+          or
+          AJAX request (maybe show loading indicator while we don't have an answer..)
+          */
+
+          // let's just simulate something...
+          var messageEl = theForm.querySelector( '.final-message' );
+          messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+          classie.addClass( messageEl, 'show' );
+        }
+      } );
+    </script>
+  </body>
+</html>
