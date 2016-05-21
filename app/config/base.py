@@ -22,5 +22,8 @@ SECURITY_SEND_PASSWORD_RESET_NOTICE_EMAIL = False
 SECURITY_LOGIN_WITHOUT_CONFIRMATION = True
 
 SECURITY_POST_LOGIN_VIEW = "/user/dashboard"
+SECURITY_POST_REGISTER_VIEW = "/user/dashboard"
 
 SKILLS = ['PHP', 'Java', 'Ruby', 'C#', 'C++', 'Bash', 'SQL', 'CSS', 'HTML', 'QA', 'Node', 'Flask','JavaScript']
+
+DEBUG_TB_INTERCEPT_REDIRECTS = False
