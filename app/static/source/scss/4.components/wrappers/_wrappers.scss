@@ -1,0 +1,13 @@
+
+// Main content where there is an aside
+.container.top-padding {padding-top:123px}
+
+
+.main-content-wrapper{
+	@include span(74%);
+	padding-top:50px;
+}
+
+.main-aside {
+	@include span(22%);
+}

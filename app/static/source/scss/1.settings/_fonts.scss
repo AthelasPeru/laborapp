@@ -1,0 +1,8 @@
+$main-font-fam: 'Roboto', sans-serif;
+$roboto-condensed: 'Roboto Condensed', sans-serif;
+
+@mixin base-font(){
+	font-family: $main-font-fam;
+	font-size: 0.9rem;
+	color: $main-font-color;
+}

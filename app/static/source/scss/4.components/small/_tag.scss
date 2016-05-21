@@ -1,0 +1,18 @@
+//This should be another component.
+.tag {
+	display: inline-block;
+	color: #ffffff;
+	background-color: $primary-orange;
+	padding: 14px;
+	margin: 10px 0px;
+	
+	font-family: $roboto-condensed;
+	font-size: 14px;
+	&.tag__date{
+		font-weight: 300;
+		margin-right:1px;
+	}
+	&.tag__category{
+		font-weight: 700;
+	}
+}

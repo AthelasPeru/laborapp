@@ -1,0 +1,7 @@
+
+/* humanstxt.org */
+Boilerplate made by Athelas, http://www.athelas.pe
+
+/* SITE */
+  Standards: HTML5, CSS3, JS, SASS, GULP, COMPASS
+  

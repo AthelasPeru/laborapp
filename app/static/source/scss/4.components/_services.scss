@@ -1,0 +1,46 @@
+.services{
+	width:100%;
+	background-color:$primary-blue;
+	position:relative;
+	margin-bottom:45px;
+	text-align:center; //Esto sobreescribe todo lo que he comentado abajo! (Esen)
+	&:after{
+		position: absolute;
+	    left: 50%;
+	    content: '';
+	    width: 0;
+	    height: 0;
+	    border-top: solid 60px $primary-blue;
+	    border-left: solid 100px transparent;
+	    border-right: solid 100px transparent;
+	    transform:translateX(-50%) scaleX(15);
+	}
+	&:before{
+		    position: absolute;
+		    left: 50%;
+		    content: '';
+		    width: 0;
+		    height: 0;
+		    bottom: 100%;
+		    display: block;
+		    border-right: solid 100px transparent;
+		    -webkit-transform: translateX(-50%) scaleX(15);
+		    transform: translateX(-50%) scaleX(15);
+		    border-bottom: solid 75px #0080c6;
+		    border-left: solid 100px transparent;
+	}
+	&__items{
+		padding-top:50px;
+		@include span(4 of 12 last);
+		// display:inline-block;
+		// margin-left:auto;
+		// margin-right:auto;
+	}
+	&__img{
+		// text-align: center;
+		// display:block;
+		// margin-left: auto;
+		// margin-right:auto;
+		//background-color:rgba(0,0,0,0.5);
+	}
+}
