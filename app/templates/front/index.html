@@ -30,25 +30,5 @@
 		</div>
 	</div>
 
-	<script>
-		var developerForm = $('#devForm');
-		var companyForm = $('#compForm');
-		
-		$('#userDeveloper').on('click', function(e) {
-			e.preventDefault();
-			developerForm.toggleClass('hide');
-			if(!companyForm.hasClass('hide')){
-				companyForm.toggleClass('hide');
-			}
-			console.log('clicked on user');
-		});
-		$('#userCompany').on('click', function(e){
-			e.preventDefault();
-			companyForm.toggleClass('hide');
-			if(!developerForm.hasClass('hide')){
-				developerForm.toggleClass('hide');
-			}
-			console.log('clicked on company');
-		});
-	</script>
+	
 {% endblock content %}
