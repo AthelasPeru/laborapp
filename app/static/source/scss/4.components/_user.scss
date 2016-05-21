@@ -7,7 +7,7 @@
 		display: block;
 	    padding: 10px 15px;
 	    margin: 4px auto;
-	    text-transform: uppercase;
+	    
 	    background-color: #DF6842;
 	    -webkit-transition: all .4s;
 	    transition: all .4s;
@@ -20,6 +20,7 @@
 	input[type=password]{
 		background-color: white!important;
 		margin-bottom:25px;
+		text-transform: none;
 	}
 	::-webkit-input-placeholder {
 	   color: #DF6842;
