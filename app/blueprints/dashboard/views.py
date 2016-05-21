@@ -8,6 +8,9 @@ from app.models import db
 from app.models.skill import Skill
 from app.models.user import User
 
+
+from app.blueprints.dashboard.utils import matching_companies
+
 dashboard = Blueprint("dashboard", __name__, url_prefix="/user")
 
 
@@ -22,24 +25,21 @@ def main():
         (skill.id, skill.name.capitalize()) for skill in skills]
 
     if request.method == "GET":
-        for skill in skills_form.skills:
-                print skills
-                print skill.data
+        companies = matching_companies(user)
         
 
         return render_template(
 
             "dashboard/index.html",
             user=user,
-            skills_form=skills_form
+            skills_form=skills_form,
+            companies=companies
         )
 
     elif request.method == "POST":
         if skills_form.validate_on_submit():
 
-            for skill in skills_form.skills:
-                print skills_form.skills
-                print skill.data
+            
 
                 user.skills = []
                 db.session.commit()
