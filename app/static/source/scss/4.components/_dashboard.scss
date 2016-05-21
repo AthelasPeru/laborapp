@@ -1,0 +1,43 @@
+.dashboard{
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	&__main{
+		width: calc(100% - 300px);
+		@include tablet{
+	    	width: 100%;
+	  	}
+	  	@include mobil{
+	    	width: 100%;
+	  	}
+	}
+	&__aside{
+		width: 300px;
+		background-color: $light-orange;
+		padding: 50px;
+		@include tablet{
+	    	width: 100%;
+	  	}
+	  	@include mobil{
+	    	width: 100%;
+	  	}
+	}	
+}
+
+
+
+.companies-list{
+	margin: 0;
+	padding: 0;
+
+	&__item{
+		margin-bottom: 15px;
+		background-color: $dark-orange;
+		@include tablet{
+	    	display: inline-block;
+	  	}
+	  	@include mobil{
+	    	display: inline-block;
+	  	}
+	}
+}

@@ -1,0 +1,13 @@
+.skills-list{
+	padding: 30px 0;
+	column-count: 5;
+	@include tablet{
+	    column-count: 3;
+	}
+  	@include mobil{
+    	column-count: 2;
+  	}
+	&__item{
+		margin: 0 0 15px;
+	}
+}
