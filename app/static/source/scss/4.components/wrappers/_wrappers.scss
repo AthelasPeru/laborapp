@@ -1,9 +1,12 @@
 body{
   margin: 0;
-  background-color: #f90;
+  font-family: sans-serif;
+}
+
+.panels-container{
+  flex-wrap: wrap;
   min-height: 100vh;
   display: flex;
-  font-family: sans-serif;
 }
 
 .init-panel{
@@ -12,12 +15,19 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
   &__company{
     @extend .init-panel;
-    background-color: #ccc;
+    background-color: #848484;
   }
   &__developer{
     @extend .init-panel;
-    background-color: #0f0;
+    background-color: #3ab13a;
   }
+  @include mobil{
+    width: 100%;
+  }
+
 }
+

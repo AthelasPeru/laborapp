@@ -1,0 +1,16 @@
+.profile{
+	padding: 30px;
+	color: #000;
+	&__header{
+		display: flex;
+		padding-bottom: 10px;
+		border-bottom: solid 1px #000;
+		
+		&__text{
+			margin-left: 30px;
+		}
+	}
+	&__main{
+		padding-top: 20px;
+	}
+}

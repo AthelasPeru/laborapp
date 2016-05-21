@@ -1,0 +1,41 @@
+
+.cta-holder{
+	width: 90%;
+	text-align: center;
+}
+
+.cta{
+	display: block;
+	padding: 10px 15px;
+	text-decoration: none;
+	max-width: 200px;
+	text-align: center;
+	margin: 4px auto;
+	text-transform: uppercase;
+	background-color: #ccc;
+	transition: all .4s;
+	color: #000;
+	&--dib{
+		display: inline-block;
+		min-width: 200px;
+	}
+	&:hover{
+		background-color: #000;
+		color: #ccc;
+	}
+	&--primary{
+		@extend .cta;
+		background-color: #ccc;
+		color: #000;		
+	}
+	&--secondary{
+		@extend .cta;
+		background-color: #000;
+		color: #ccc;
+	}
+	@include mobil{
+    	width: auto;
+    	margin-top: 10px;
+    	margin-bottom: 10px;
+  	}
+}

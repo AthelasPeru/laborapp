@@ -1,0 +1,18 @@
+
+
+.user-avatar{
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  transition: all .5s;
+  &--small{
+    width: 100px;
+    height: 100px;
+  }
+  @include mobil{
+    width: 100px;
+    height: 100px;
+  }
+}
