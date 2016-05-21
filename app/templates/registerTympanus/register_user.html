@@ -1,0 +1,54 @@
+
+
+	<!-- Top Navigation -->
+	<header class="codrops-header">
+		<h1>¡Hola! ¿Buscando un nuevo trabajo?<span>Puede que tengamos algo para tí...</span></h1>	
+	</header>
+
+	<!-- Form Section -->
+	<section>
+		<form id="theForm" class="simform" autocomplete="off" action="{{ url_for_security('register') }}" method="POST" name="register_user_form">
+			{{ register_user_form.hidden_tag() }}
+			<div class="simform-inner">
+				<ol class="questions">
+					<li>
+						<span><label for="name">¿Cuál es tu nombre?</label></span>
+						<input id="name" name="name" type="text"/>
+					</li>
+					<li>
+						<span><label for="age">¿Qué edad tienes?</label></span>
+						<input id="age" name="age" type="text"/>
+					</li>
+					<li>
+						<span><label for="proffession">¿Qué profesión tienes?</label></span>
+						<input id="proffession" name="proffession" type="text"/>
+					</li>
+					<li>
+						<span><label for="email">¿Cuál es tu correo electrónico?</label></span>
+						<input id="email" name="email" type="text"/>
+					</li>
+					<li>
+						<span><label for="password">Solo te falta elegir una contraseña...</label></span>
+						<input id="password" name="password" type="password"/>
+					</li>
+					<li>
+						<span><label for="password_confirm">Y confirmar tu contraseña para estar seguros...</label></span>
+						<input id="password_confirm" name="password_confirm" type="password"/>
+					</li>
+				</ol><!-- /questions -->
+				<button class="submit" type="submit">Send answers</button>
+				<div class="controls">
+					<button class="next"></button>
+					<div class="progress"></div>
+					<span class="number">
+						<span class="number-current"></span>
+						<span class="number-total"></span>
+					</span>
+					<span class="error-message"></span>
+				</div><!-- / controls -->
+			</div><!-- /simform-inner -->
+			<span class="final-message"></span>
+		</form><!-- /simform -->			
+	</section>
+
+		

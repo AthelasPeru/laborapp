@@ -1,0 +1,64 @@
+
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+{% include "security/_messages.html" %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Laborapp | Registro de Usuario</title>
+    <meta name="description" content="Minimal Form Interface: Simplistic, single input view form (From CodeDrops)" />
+    <meta name="keywords" content="form, minimal, interface, single input, big form, responsive form, transition" />
+    <link rel="shortcut icon" href="{{url_for("static", filename="/favicon.ico")}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="tympanus/css/normalize.css")}}"/>
+    <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="tympanus/css/demo.css")}} "/>
+    <link rel="stylesheet" type="text/css" href="{{url_for("static", filename="tympanus/css/component.css")}} "/>
+    <script src="{{url_for("static", filename="tympanus/js/modernizr.custom.js")}}""></script>
+  </head>
+  <body>
+    <div class="div">
+      {# 
+        {{ render_field_with_errors(register_user_form.email) }}
+        {{ render_field_with_errors(register_user_form.password) }}
+        {{ render_field_with_errors(register_user_form.name) }}
+        {{ render_field_with_errors(register_user_form.age) }}
+        {{ render_field_with_errors(register_user_form.proffession) }}
+        {{ render_field_with_errors(register_user_form.password_confirm) }} 
+      #}
+    </div>
+    <div class="container">
+
+        {% if role == "candidate" %}
+
+          {% include "registerTympanus/register_user.html" %}
+            
+        {% else %}
+
+          {% include "registerTympanus/register_company.html" %}
+
+        {% endif %}
+      
+    </div><!-- /container -->
+
+    <script src="{{url_for("static", filename="tympanus/js/classie.js")}}"></script>
+    <script src="{{url_for("static", filename="tympanus/js/stepsForm.js")}}"></script>
+    <script>
+      var theForm = document.getElementById( 'theForm' );
+
+      new stepsForm( theForm, {
+        onSubmit : function( form ) {
+          // hide form
+          classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+          console.log("Form to submit: ");
+          console.log(form);
+          form.submit()
+          // let's just simulate something...
+          var messageEl = theForm.querySelector( '.final-message' );
+          messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+          classie.addClass( messageEl, 'show' );
+        }
+      } );
+    </script>
+  </body>
+</html>
