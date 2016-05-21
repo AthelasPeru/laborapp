@@ -19,6 +19,8 @@ admin = Admin()
 
 # blueprints
 from app.blueprints.front.views import front
+from app.blueprints.front.forms import ExtendedRegisterForm
+from app.blueprints.dashboard.views import dashboard
 
 
 def create_app(app=None, config_file=None):
@@ -41,10 +43,12 @@ def create_app(app=None, config_file=None):
 
     # Setup Flask-Security
     user_datastore = SQLAlchemyUserDatastore(db, User, Role)
-    security = Security(app, user_datastore)
+    security = Security(
+        app, user_datastore, register_form=ExtendedRegisterForm)
 
     # Blueprints
     app.register_blueprint(front)
+    app.register_blueprint(dashboard)
 
     # Admin Blueprints
     admin.add_view(AdminSkillView(Skill, db.session))
@@ -56,8 +60,17 @@ def create_app(app=None, config_file=None):
     def security_register_processor():
         role = request.args.get("role", None)
         if role:
+            role_id = db.session.query(Role).filter_by(name=role).first().id
+            if role_id:
+                return dict(
+                    role=role,
+                    role_id=role_id
+                )
+                
             return dict(role=role)
         else:
             abort(500)
+
+
 
     return app
