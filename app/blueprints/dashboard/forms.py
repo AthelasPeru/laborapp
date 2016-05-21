@@ -7,5 +7,5 @@ class SkillsForm(Form):
 
 	skills = MultiCheckboxField(
 		"Categorias",
-		coerce=unicode
+		coerce=int
 	)
