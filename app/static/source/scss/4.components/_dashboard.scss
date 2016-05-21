@@ -16,6 +16,7 @@
 		width: 300px;
 		background-color: $light-orange;
 		padding: 50px;
+		border-left: 4px solid rgba(0,0,0,0.2);
 		@include tablet{
 	    	width: 100%;
 	  	}
