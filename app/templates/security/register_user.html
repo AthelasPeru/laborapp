@@ -18,12 +18,14 @@
   </head>
   <body>
     <div class="div">
-      {{ render_field_with_errors(register_user_form.email) }}
+      {# 
+        {{ render_field_with_errors(register_user_form.email) }}
         {{ render_field_with_errors(register_user_form.password) }}
-         {{ render_field_with_errors(register_user_form.name) }}
-          {{ render_field_with_errors(register_user_form.age) }}
-           {{ render_field_with_errors(register_user_form.proffession) }}
-           {{ render_field_with_errors(register_user_form.password_confirm) }}
+        {{ render_field_with_errors(register_user_form.name) }}
+        {{ render_field_with_errors(register_user_form.age) }}
+        {{ render_field_with_errors(register_user_form.proffession) }}
+        {{ render_field_with_errors(register_user_form.password_confirm) }} 
+      #}
     </div>
     <div class="container">
 
@@ -48,13 +50,9 @@
         onSubmit : function( form ) {
           // hide form
           classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+          console.log("Form to submit: ");
+          console.log(form);
           form.submit()
-          /*
-          
-          or
-          AJAX request (maybe show loading indicator while we don't have an answer..)
-          */
-
           // let's just simulate something...
           var messageEl = theForm.querySelector( '.final-message' );
           messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
