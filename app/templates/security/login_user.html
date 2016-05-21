@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="panels-container">
+		<div class="init-panel__company">
+		  <a href="#" class="user-avatar" id="userCompany">
+		  	<img src="{{url_for("static", filename="dist/img/developer.png")}}" alt="">
+		  </a>
+		  <h2 class="title--alpha">Empresa</h2>
+		  <div id="compLogin" class="hide">
+			  {# Login form Company #}
+			  <div class="login-form-holder">
+			  	
+			  	
+			  </div>
+		  </div>
+		</div>
+		<div class="init-panel__developer">
+			<a href="#" class="user-avatar" id="userDeveloper">
+				<img src="{{url_for("static", filename="dist/img/empresa.png")}}" alt="">
+			</a>
+			<h2 class="title--alpha">Developer</h2>
+			<div class="hide" id="devLogin">
+				{# Login form  #}
+			  	<div class="login-form-holder">
+			  		<input type="text" name="name"><label for="name">Nombre</label>
+					<input type="password" name="password"><label for="password">Contraseña</label>
+			  	</div>
+		  </div>
+		</div>
+	</div>
+
+	
+{% endblock content %}
