@@ -20,7 +20,10 @@
 		top: 0;
 		background-color: #000;
 		transform: skewX(68deg);
-		z-index: -1;
+	}
+	span{
+		position: relative;
+		z-index: 1;
 	}
 	@include mobil{
 		display: none;

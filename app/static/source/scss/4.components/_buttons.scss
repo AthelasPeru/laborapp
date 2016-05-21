@@ -30,9 +30,15 @@
 	    max-width: 250px;
 	    margin-bottom: 15px;
 	}
+	&--beta{
+		color: #fff;
+	}
 	&--alpha:hover{
 		color: #000;
 		background-color:$dark-yellow;
+	}
+	&--beta:hover{
+		color: #fff;
 	}
 	&--primary{
 		@extend .cta;
