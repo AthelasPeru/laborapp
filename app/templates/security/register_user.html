@@ -1,40 +1,96 @@
 
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+{% include "security/_messages.html" %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Laborapp | Registro de Usuario</title>
+    <meta name="description" content="Minimal Form Interface: Simplistic, single input view form" />
+    <meta name="keywords" content="form, minimal, interface, single input, big form, responsive form, transition" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="{{url_for("static", filename="favicon.ico")}}>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
+  </head>
+  <body>
+<div class="container">
+      <!-- Top Navigation -->
+      <header class="codrops-header">
+        <h1>¡Hola! ¿Buscando un nuevo trabajo?<span>Puede que tengamos algo para tí...</span></h1>  
+      </header>
+      <section>
+{% if role == "candidate" %}
+  {% include "registerTympanus/register_user.html" %}
 
-
-<h1>Register Mi user {{role}}</h1>
-<form action="/register" method="POST" name="register_user_form">
-  <div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="1463854409##1054f201f17a2c74752381be6441c6540e45cd19"><input id="next" name="next" type="hidden" value=""></div>
-  
-  <p>
-    <label for="email">Email Address</label> <input id="email" name="email" type="text" value="">
+{% else %}
+  <form action="/register" method="POST" name="register_user_form">
+    <div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="1463854409##1054f201f17a2c74752381be6441c6540e45cd19"><input id="next" name="next" type="hidden" value=""></div>
     
-  </p>
+    <p>
+      <label for="email">Email Address</label> <input id="email" name="email" type="text" value="">
+      
+    </p>
 
-  
-  <p>
-    <label for="password">Password</label> <input id="password" name="password" type="password" value="">
     
-  </p>
+    <p>
+      <label for="password">Password</label> <input id="password" name="password" type="password" value="">
+      
+    </p>
 
-  
     
-  <p>
-    <label for="password_confirm">Retype Password</label> <input id="password_confirm" name="password_confirm" type="password" value="">
+      
+    <p>
+      <label for="password_confirm">Retype Password</label> <input id="password_confirm" name="password_confirm" type="password" value="">
+      
+    </p>
+
     
-  </p>
+    
+    <p><input id="submit" name="submit" type="submit" value="Register"></p>
 
-  
-  
-  <p><input id="submit" name="submit" type="submit" value="Register"></p>
+  </form>
 
-</form>
+  <h2>Menu</h2>
+  <ul>
+    <li><a href="/login">Login</a></li>
+    
+    <li><a href="/register">Register</a><br/></li>
+    
+    
+    
+  </ul>
 
-<h2>Menu</h2>
-<ul>
-  <li><a href="/login">Login</a></li>
-  
-  <li><a href="/register">Register</a><br/></li>
-  
-  
-  
-</ul>
+{% endif %}
+
+</section>
+    </div><!-- /container -->
+    <script src="js/classie.js"></script>
+    <script src="js/stepsForm.js"></script>
+    <script>
+      var theForm = document.getElementById( 'theForm' );
+
+      new stepsForm( theForm, {
+        onSubmit : function( form ) {
+          // hide form
+          classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+          /*
+          form.submit()
+          or
+          AJAX request (maybe show loading indicator while we don't have an answer..)
+          */
+
+          // let's just simulate something...
+          var messageEl = theForm.querySelector( '.final-message' );
+          messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+          classie.addClass( messageEl, 'show' );
+        }
+      } );
+    </script>
+  </body>
+</html>
