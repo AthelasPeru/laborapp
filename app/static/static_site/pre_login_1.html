@@ -9,25 +9,44 @@
   <link rel="stylesheet" href="../dist/css/app.css">
 </head>
 <body>
-	<div class="panels-container">
+<div class="panels-container">
 		<div class="init-panel__company">
-		  <a href="#" class="user-avatar"><img src="../dist/img/developer.png" alt=""></a>
+		  <a href="#" class="user-avatar" id="userCompany">
+		  	<img src="../dist/img/developer.png" alt="">
+		  </a>
 		  <h2 class="title--alpha">Empresa</h2>
-		  <div id="compForm">
-			  <p class="title--beta strong">Welcome back, friend</p>
-			  <div class="cta-holder">
-			  	<a href="#" class="cta cta--alpha">Login</a>
-			  	<a href="#" class="cta cta--alpha">Register</a>
-			  </div>
+		  <div id="compLogin" class="hide">
+			  <form class="login-form-holder">
+			  		<input type="text" name="name"><label for="name">Nombre</label>
+					<input type="password" name="password"><label for="password">Contraseña</label>
+					<div class="cta-holder">
+				  		<input type="submit" value="actualizar"  class="cta cta--alpha cta--dib">
+				  	</div>
+			  	</form>
 		  </div>
 		</div>
 		<div class="init-panel__developer">
-		  <a href="#" class="user-avatar"><img src="../dist/img/empresa.png" alt=""></a>
-		  <h2 class="title--alpha">Developer</h2>
-		  
+			<a href="#" class="user-avatar" id="userDeveloper">
+				<img src="../dist/img/empresa.png" alt="">
+			</a>
+			<h2 class="title--alpha">Developer</h2>
+			<div id="devLogin">
+
+			  	<form class="login-form-holder">
+			  		<div class="name-wrapper">
+			  			<input class="login-name" placeholder="Nombre" type="text" name="name">
+			  			<label for="name">Nombre</label>
+			  		</div>
+			  		<div class="password-wrapper">
+			  			<input class="login-password" placeholder="Contraseña" type="password" name="password">
+			  			<label for="password">Contraseña</label>
+			  		</div>
+					
+				  	<input type="submit" value="actualizar"  class="cta cta--alpha">
+			  	</form>
+		  </div>
 		</div>
 	</div>
-
 
 	<!-- Scripts -->
 	<script src="../dist/js/lib/jquery/jquery.min.js"></script>

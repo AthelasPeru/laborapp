@@ -2328,6 +2328,96 @@ input[type=checkbox]:hover {
 		.tooltip {
 			display: none; } }
 
+.login-form-holder {
+	margin-top: 50px;
+	width: 90%;
+	text-align: center; }
+	.login-form-holder input {
+		display: block;
+		padding: 10px 15px;
+		margin: 4px auto;
+		text-transform: uppercase;
+		background-color: #DF6842;
+		-webkit-transition: all .4s;
+		transition: all .4s;
+		color: #000;
+		height: 50px;
+		width: 100%;
+		min-width: 250px; }
+	.login-form-holder input[type=text],
+	.login-form-holder input[type=password] {
+		background-color: white !important;
+		margin-bottom: 25px; }
+	.login-form-holder ::-webkit-input-placeholder {
+		color: #DF6842;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 20px; }
+	.login-form-holder :-moz-placeholder {
+		/* Firefox 18- */
+		color: #DF6842;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 20px; }
+	.login-form-holder ::-moz-placeholder {
+		/* Firefox 19+ */
+		color: #DF6842;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 20px; }
+	.login-form-holder :-ms-input-placeholder {
+		color: #DF6842;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 20px; }
+
+.name-wrapper,
+.password-wrapper {
+	position: relative; }
+
+.login-name + label {
+	position: absolute;
+	display: none; }
+
+.login-password + label {
+	position: absolute;
+	display: none; }
+
+:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	background-color: #fafafa;
+	background-image: none;
+	color: black; }
+
+::-webkit-input-placeholder {
+	color: #DF6842;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px; }
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: #DF6842;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px; }
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: #DF6842;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px; }
+
+:-ms-input-placeholder {
+	color: #DF6842;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px; }
+
 .hide {
 	display: none !important; }
 /*# sourceMappingURL=app.css.map */
