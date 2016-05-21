@@ -2263,7 +2263,8 @@ body {
 			   -moz-column-count: 2;
 			        column-count: 2; } }
 	.skills-list__item {
-		margin: 0 0 15px; }
+		margin: 0 0 15px;
+		text-transform: uppercase; }
 
 input[type=checkbox] {
 	padding-left: 5px;
@@ -2279,6 +2280,9 @@ input[type=checkbox] {
 
 input[type=checkbox]:checked {
 	background-color: #F5724A; }
+
+input[type=checkbox]:checked + label {
+	color: #F5724A; }
 
 input[type=checkbox]:hover {
 	box-shadow: 0px 0px 1px #DF6842; }
