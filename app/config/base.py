@@ -20,4 +20,7 @@ SECURITY_SEND_REGISTER_EMAIL = False
 SECURITY_SEND_PASSWORD_CHANGE_EMAIL = False
 SECURITY_SEND_PASSWORD_RESET_NOTICE_EMAIL = False
 SECURITY_LOGIN_WITHOUT_CONFIRMATION = True
+
 SECURITY_POST_LOGIN_VIEW = "/user/dashboard"
+
+SKILLS = ['PHP', 'Java', 'Ruby', 'C#', 'C++', 'Bash', 'SQL', 'CSS', 'HTML', 'QA', 'Node', 'Flask', 'PHP', 'JavaScript', 'Java', 'Ruby', 'C#', 'C++', 'Bash', 'SQL', 'CSS', 'HTML', 'QA', 'Node', 'Flask',]
