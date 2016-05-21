@@ -1,0 +1,47 @@
+{
+  "name": "athelas_static_boilerplate",
+  "version": "1.0.0",
+  "description": "Static boilerplate",
+  "main": "gulpfile.js",
+  "scripts": {
+    "scss": "mkdir -p dist/css && node-sass --output-style nested --indent-type tab --indent-width 1 --source-map true -o dist/css source/scss/app.scss",
+    "scss:min": "mkdir -p dist/css && node-sass --output-style compressed source/scss/app.scss > dist/css/app.min.css",
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/*.css",
+    "uglify": "mkdir -p dist/js && uglifyjs source/js/*.js -c --name-cache /tmp/cache.json -o dist/js/app.min.js --lint --source-map dist/js/app.min.js.map",
+    "imagemin": "mkdir -p dist/img && imagemin source/img dist/img -p",
+    "icons": "svgo -f source/sprite && mkdir -p dist/img && svg-sprite-generate -d source/sprite -o dist/img/icons.svg",
+    "serve": "browser-sync start --server --files 'dist/css/*.css, dist/js/*.js'",
+    "build:fonts": "mkdir -p dist/fonts && cp -R source/scss/0.lib/fontawesome/fonts/* dist/fonts && cp -R node_modules/slick-carousel/slick/fonts/* dist/fonts",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "build:js-vendor": "mkdir -p dist/js/lib/slick && cp -R node_modules/slick-carousel/slick/slick.js dist/js/lib/slick/slick.js && mkdir -p dist/js/lib/jquery && cp -R node_modules/jquery/dist/jquery.min.js dist/js/lib/jquery/jquery.min.js",
+    "build:js":"npm run uglify",
+    "build:images": "npm run imagemin && npm run icons",
+    "build:all": "npm run build:css && npm run build:js && npm run build:images && npm run build:fonts && npm run build:js-vendor",
+    "watch:css": "onchange 'source/scss/**/*.scss' -- npm run build:css",
+    "watch:js": "onchange 'source/js/*.js' -- npm run build:js",
+    "watch:all": "parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ondoheer@bitbucket.org/athelas/athelas-static-bolierplate.git"
+  },
+  "author": "Athelas Peru",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "browser-sync": "^2.11.1",
+    "imagemin-cli": "^2.1.0",
+    "node-sass": "^3.4.2",
+    "onchange": "^2.0.0",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.5.1",
+    "slick-carousel": "^1.6.0",
+    "svg-sprite-generator": "0.0.7",
+    "svgo": "^0.6.1",
+    "uglify-js": "^2.6.1"
+  },
+  "homepage": "",
+  "dependencies": {
+    
+  }
+}

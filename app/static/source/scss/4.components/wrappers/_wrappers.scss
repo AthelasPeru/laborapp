@@ -1,0 +1,23 @@
+body{
+  margin: 0;
+  background-color: #f90;
+  min-height: 100vh;
+  display: flex;
+  font-family: sans-serif;
+}
+
+.init-panel{
+  width: 50%;
+  //border: solid 1px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__company{
+    @extend .init-panel;
+    background-color: #ccc;
+  }
+  &__developer{
+    @extend .init-panel;
+    background-color: #0f0;
+  }
+}
