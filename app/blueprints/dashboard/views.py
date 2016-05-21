@@ -1,8 +1,12 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_security import login_required
 from flask_security.core import current_user
 
 from app.blueprints.dashboard.forms import SkillsForm
+
+from app.models import db
+from app.models.skill import Skill
+from app.models.user import User
 
 dashboard = Blueprint("dashboard", __name__, url_prefix="/user")
 
@@ -11,11 +15,42 @@ dashboard = Blueprint("dashboard", __name__, url_prefix="/user")
 @login_required
 def main():
 
-    form = SkillsForm()
+    user = db.session.query(User).get(current_user.id)
+    skills = db.session.query(Skill).all()
+    skills_form = SkillsForm()
+    skills_form.skills.choices = [
+        (skill.id, skill.name.capitalize()) for skill in skills]
 
-
-    return render_template(
+    if request.method == "GET":
+        for skill in skills_form.skills:
+                print skills
+                print skill.data
         
-        "dashboard/index.html",
-        user=current_user,
-    )
+
+        return render_template(
+
+            "dashboard/index.html",
+            user=user,
+            skills_form=skills_form
+        )
+
+    elif request.method == "POST":
+        if skills_form.validate_on_submit():
+
+            for skill in skills_form.skills:
+                print skills_form.skills
+                print skill.data
+
+                user.skills = []
+                db.session.commit()
+                for skill in skills_form.skills.data:
+                    skill = db.session.query(Skill).get(skill)
+                    user.skills.append(skill)
+
+                db.session.commit()
+                flash("Data agregada correctamente")
+                return redirect(url_for("dashboard.main"))
+        elif skills_form.errors:
+            print "errores {}".format(skills_form.errors)
+            flash("Data erronea {}".format(skills_form.errors))
+            return redirect(url_for("dashboard.main"))
