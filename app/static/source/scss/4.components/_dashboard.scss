@@ -13,7 +13,7 @@
 	}
 	&__aside{
 		width: 300px;
-		background-color: #848484;
+		background-color: $light-orange;
 		padding: 50px;
 		@include tablet{
 	    	width: 100%;
@@ -30,6 +30,7 @@
 
 	&__item{
 		margin-bottom: 15px;
+		background-color: $dark-orange;
 		@include tablet{
 	    	display: inline-block;
 	  	}

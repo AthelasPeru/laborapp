@@ -12,7 +12,7 @@
 	text-align: center;
 	margin: 4px auto;
 	text-transform: uppercase;
-	background-color: #ccc;
+	background-color: $dark-orange;
 	transition: all .4s;
 	color: #000;
 	&--dib{
@@ -20,17 +20,28 @@
 		min-width: 200px;
 	}
 	&:hover{
-		background-color: #000;
+		background-color: $basic-gray;
 		color: #ccc;
+	}
+	&--alpha{
+	    padding:0!important;
+	    line-height: 50px;
+	    height: 50px;
+	    max-width: 250px;
+	    margin-bottom: 15px;
+	}
+	&--alpha:hover{
+		color: #000;
+		background-color:$dark-yellow;
 	}
 	&--primary{
 		@extend .cta;
-		background-color: #ccc;
+		background-color: $light-orange;
 		color: #000;		
 	}
 	&--secondary{
 		@extend .cta;
-		background-color: #000;
+		background-color: $light-orange;
 		color: #ccc;
 	}
 	@include mobil{

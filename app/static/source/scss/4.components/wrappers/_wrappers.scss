@@ -19,11 +19,11 @@ body{
 
   &__company{
     @extend .init-panel;
-    background-color: #848484;
+    background-color: $dark-blue;
   }
   &__developer{
     @extend .init-panel;
-    background-color: #3ab13a;
+    background-color: $light-orange;
   }
   @include mobil{
     width: 100%;
